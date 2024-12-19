@@ -56,7 +56,7 @@ function addData(source) {
     let cartoona = ""
     source.forEach(item => {
         let len = String(item.short_description).length
-        cartoona += `<div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="${item.id}">
+        cartoona += `<div class="col-md-6 col-lg-4 col-xl-3  px-3" data-Id="${item.id}">
           <div class="card px-2 bg-transparent ">
             <figure class="pt-3 px-2 mb-0">
               <img src="${item.thumbnail}" class="card-img-top " alt="${item.title}">

@@ -64,8 +64,17 @@ nav{
     padding: 0 !important;
     cursor: pointer;
     height: 380px !important;
+    figure{
+        height: 50% !important;
+    }
+    .card-body{
+        height:  40% !important;
+    }
+    .card-footer{
+        height:10% !important;
+    }
     p{
-        height: 80px !important;
+        /* height: 80px !important; */
         box-sizing: border-box;
         padding-top: .3rem;
     }
@@ -86,7 +95,3 @@ figure {
     }
 }
 
-
-#detiles #description p:nth-child(4) span{
-    background-color: red !important;
-}
