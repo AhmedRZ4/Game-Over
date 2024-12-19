@@ -1,0 +1,92 @@
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #32383E;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #25292E; 
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb {
+    background: #25292E; 
+    border-radius: 10px;
+  }
+body{
+    padding: 0;
+    margin: 0;   
+    font-family: "Comfortaa", cursive !important;
+    font-weight: 900;
+    color: white !important;
+    a{     
+        font-family: "Comfortaa" !important;
+        font-size: 12.25px !important;
+        font-weight: 400 !important;
+        color: white !important;
+    }
+    overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Nerko One", cursive,sans-serif; 
+    color: white !important;
+}
+.show{
+    display: block !important;
+}
+.h-bg{
+    background-image: url("../img/header-bg.png");
+    background-color: rgba(255, 255, 255, 0.023);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: overlay;
+    width: 100%;
+    height: 200px;
+   
+}
+nav{
+    margin-top: -30px !important;
+}
+.navbar-brand img{
+    width: 20%;
+}
+.nav-item a{
+    cursor: pointer;
+    transition: color  .5s;
+}
+.nav-item a.active{
+    color: rgb(0, 153, 204) !important;
+}
+.nav-item a:hover{
+    color: rgb(0, 153, 204) !important;
+}
+.card{
+    filter: grayscale(.7);
+    transition: all .7s;
+    padding: 0 !important;
+    cursor: pointer;
+    height: 380px !important;
+    p{
+        height: 80px !important;
+        box-sizing: border-box;
+        padding-top: .3rem;
+    }
+}
+.card:hover{
+    filter: grayscale(0);
+    transform: scale(1.06);
+    
+}
+
+figure {
+    width: 100%;
+    height: 200px;
+    img , iframe{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+}
+
+
+#detiles #description p:nth-child(4) span{
+    background-color: red !important;
+}

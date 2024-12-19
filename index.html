@@ -2,23 +2,220 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/favicon.png">
-    <title>DevFolio Bootstrap Portfolio Template - Index</title>
-    <base href="./index.html">
-    <meta name="description" content="">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/all.min.css">
-    <link rel="stylesheet" href="./css/animation.css">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/logo.png">
+  <title>Game Over</title>
+  <base href="./index.html">
+  <meta name="description"
+    content="Play free online games at CrazyGames, the best place to play high-quality browser games. We add new games every day. Have fun!">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nerko+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/animation.css">
+  <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body>
-    <!-- main js -->
-    <script src="./js/script.js"></script>
-    <!-- bootstrap js -->
-    <script src="./js/bootstrap.bundle.min.js"></script>
+<body class="bg-dark min-vh-100">
+  <!-- Main conatint -->
+  <div class="loading d-none">
+    <span class="loader"></span>
+  </div>
+  <section class=" bg-dark" id="card">
+    <header class="z-3 h-bg"></header>
+    <nav class="container navbar navbar-expand-lg position-sticky z-3 top-0 col-md-6 col-lg-9 rounded-4 p-1 mt-0 m-auto"
+      style="background-color: rgba(58, 73, 123, 1);">
+      <div class="container">
+        <h5 class="navbar-brand pb-md-0"><img src="./img/logo-sm.png" alt="logo"> Game Reviews</h5>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-uppercase active" aria-current="page" data-Category="mmorpg">mmorpg</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" aria-current="page" data-Category="shooter">shooter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" aria-current="page" data-Category="sailing">sailing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" aria-current="page" data-Category="permadeath">permadeath</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" aria-current="page" data-Category="superhero">superhero</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" aria-current="page" data-Category="pixel">pixel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container py-5">
+      <div class="row gy-4" id="container">
+        <div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="475">
+          <div class="card px-2 bg-transparent ">
+            <figure class="pt-3 px-2 mb-0">
+              <!-- <video class="featuredvideo" loop="" preload="none" muted="" __idm_id__="8519681">
+                <source src="https://www.freetogame.com/g/475/thumbnail.jpg" type="video/webm">
+              </video> -->
+              <iframe src="https://www.youtube.com/embed/oDrPsZxk-WM?autoplay=0&mute=0"
+                title="Umm Kulthum - Fakarouny | ام كلثوم - فكرونى" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </figure>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center ">
+                <h3 class="fs-6">Tarisland</h3>
+                <span class="badge text-bg-primary p-2">Free</span>
+              </div>
+              <p class="card-text text-center text-white-50 fw-semibold fs-6">
+                A,cross-platform,MMORPG,developed,by,Level,Infinite,and</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between text-center">
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">MMORPG</span>
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">PC (Windows)</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="475">
+          <div class="card px-2 bg-transparent ">
+            <figure class="pt-3 px-2 mb-0">
+              <img src="https://www.freetogame.com/g/475/thumbnail.jpg" class="card-img-top " alt="...">
+            </figure>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center ">
+                <h3 class="fs-6">Tarisland</h3>
+                <span class="badge text-bg-primary p-2">Free</span>
+              </div>
+              <p class="card-text text-center text-white-50 fw-lighter fs-6">
+                A,cross-platform,MMORPG,developed,by,Level,Infinite,and</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between text-center">
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">MMORPG</span>
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">PC (Windows)</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="475">
+          <div class="card px-2 bg-transparent ">
+            <figure class="pt-3 px-2 mb-0">
+              <img src="./img/logo.png" class="card-img-top " alt="...">
+            </figure>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center ">
+                <h3 class="fs-6">Tarisland</h3>
+                <span class="badge text-bg-primary p-2">Free</span>
+              </div>
+              <p class="card-text text-center text-white-50 fw-semibold fs-6">
+                A,cross-platform,MMORPG,developed,by,Level,Infinite,and</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between text-center">
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">MMORPG</span>
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">PC (Windows)</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="475">
+          <div class="card px-2 bg-transparent ">
+            <figure class="pt-3 px-2 mb-0">
+              <img src="./img/logo.png" class="card-img-top " alt="...">
+            </figure>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center ">
+                <h3 class="fs-6">Tarisland</h3>
+                <span class="badge text-bg-primary p-2">Free</span>
+              </div>
+              <p class="card-text text-center text-white-50 fw-semibold fs-6">
+                A,cross-platform,MMORPG,developed,by,Level,Infinite,and</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between text-center">
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">MMORPG</span>
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">PC (Windows)</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="475">
+          <div class="card px-2 bg-transparent ">
+            <figure class="pt-3 px-2 mb-0">
+              <img src="./img/logo.png" class="card-img-top " alt="...">
+            </figure>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center ">
+                <h3 class="fs-6">Tarisland</h3>
+                <span class="badge text-bg-primary p-2">Free</span>
+              </div>
+              <p class="card-text text-center text-white-50 fw-semibold fs-6">
+                A,cross-platform,MMORPG,developed,by,Level,Infinite,and</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between text-center">
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">MMORPG</span>
+              <span class="text-white rounded-2 text-bg-secondary p-2 fa-2xs ">PC (Windows)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+  <!-- detiles -->
+  <section class="bg-dark pt-4 d-none" id="detiles">
+    <div class="container">
+      <header class="d-flex justify-content-between pb-4">
+        <h1>Details Game</h1>
+        <button class="btn text-white"><i class="fa-light fa-close fa-2x fw-lighter text-white-50"></i></button>
+      </header>
+      <div class="row">
+        <div class="col-md-4">
+          <figure>
+            <img src="https://www.freetogame.com/g/475/thumbnail.jpg" alt="">
+          </figure>
+        </div>
+        <div class="col-md-8">
+          <h3>Title: <span>Genshin Impact</span></h3>
+          <div id="description">
+            <p>Category: <span class="badge text-black fw-bolder bg-info">Action RPG</span></p>
+            <p>Platform: <span class="badge text-black fw-bolder bg-info">Windows</span></p>
+            <p>Status: <span class="  badge   text-black fw-bolder bg-info">Live</span></p>
+            <p style="font-size: 14px !important;">In Dragon Blood, a free-to-play browser MMORPG from 101XP, you’ll
+              harness your unique power and the blood
+              of dragons that flows through your veins to triumph over the forces of evil scourging the land. After
+              emerging from a thousand-year sleep, you’ll embark on your epic journey as either an intrepid warrior or
+              powerful mage and assemble a powerful army to fight the enemy! Combat in Dragon Blood is turn-based,
+              similar
+              to many old school console RPGs. As you level, you’ll gain more abilities that you can use to take down
+              your
+              enemies. There are hundreds of different ways to build your character, and thousands of options to tailor
+              your appearance to match your unique style. You’ll also recruit several heroes to join your party, who
+              will
+              bring their own talents and skills to the battlefield. You’ll need to properly manage your party’s
+              composition, to bring the best warriors into combat and make strategic decisions to succeed against waves
+              of
+              increasingly difficult monsters. Dragon Blood offers plenty of content, including hundreds of quests,
+              dungeons with challenging bosses, and weekly events, quests, and promotions. As a reward for your efforts,
+              you’ll increase your characters’ capabilities and receive several different types of loot, up to and
+              including fantastic dragons you can tame and have fight along your side. There are also a large number of
+              mounts and other combat pets to acquire, so you’ll always have something new to strive for! You can also
+              join up with your friends to create a guild and compete with other guilds for glory. During “Best Guild”
+              competitions, the guild that achieves the highest rating receives prizes for its members. Other events
+              award
+              gifts for upgrading your mounts, winning battles, or even upgrading wedding rings. Rise to the top of the
+              rankings and make your mark as the greatest warrior in the land!</p>
+          </div>
+          <a href="https://tarisglobal.com/en/home.html" target="_blank" class="btn btn-outline-warning">Show Game</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- main js -->
+  <script type="module" src="./js/main.js"></script>
+  <!-- bootstrap js -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
