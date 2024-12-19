@@ -1,5 +1,6 @@
 const cat = document.querySelectorAll("a.nav-link");
 const loaderLayer = (document.getElementsByClassName("loading"))[0];
+const conatinerCard = document.getElementById("container");
 const options = {
     method: 'GET',
     headers: {
@@ -7,11 +8,19 @@ const options = {
         'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
     }
 };
-let data = []
+let data = [];
+(async function(){
+    displayLoader(true);
+    const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=mmorpg`;
+    data = await getData(url);
+    addData(data);
+    displayLoader(false);
+})();
+    
+
 // fetch data by category
 async function getData(url) {
     try {
-
         const response = await fetch(url, options);
         const result = await response.json();
         return result;
@@ -28,7 +37,7 @@ cat.forEach((item) => {
         const category = e.target.getAttribute('data-Category');
         const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`;
         data = await getData(url);
-        addData();
+        addData(data);
         getGameId();
         e.target.classList.add("active");
         displayLoader(false);
@@ -43,10 +52,9 @@ function displayLoader(flag) {
     }
 }
 // card items
-const conatinerCard = document.getElementById("container");
-function addData() {
+function addData(source) {
     let cartoona = ""
-    data.forEach(item => {
+    source.forEach(item => {
         let len = String(item.short_description).length
         cartoona += `<div class="col-sm-6 col-md-4 col-lg-3 px-3" data-Id="${item.id}">
           <div class="card px-2 bg-transparent ">
@@ -101,12 +109,12 @@ class SectionDetiles {
         this.Status = document.querySelector("#detiles #description p:nth-child(3) span");
         this.detiles = document.querySelector("#detiles #description p:nth-child(4)");
         this.link = document.querySelector("#detiles a");
-        this.exit.addEventListener("click",()=>{
+        this.exit.addEventListener("click", () => {
             displaySection("card", true);
             displaySection("detiles", false);
         });
     }
-    
+
 }
 // change section state
 function displaySection(name, flag) {
@@ -121,14 +129,14 @@ function displaySection(name, flag) {
     }
 }
 // add detiles
-function addDetiles(gameData){
-    const game=new SectionDetiles();
-    game.title.innerHTML=gameData.title;
-    game.image.src=gameData.thumbnail;
-    game.Platform.innerHTML=gameData.platform;
-    game.Status.innerHTML=gameData.status;
-    game.category.innerHTML=gameData.genre;
-    game.detiles.innerHTML=gameData.description;
-    game.link.href=gameData.game_url;
+function addDetiles(gameData) {
+    const game = new SectionDetiles();
+    game.title.innerHTML = gameData.title;
+    game.image.src = gameData.thumbnail;
+    game.Platform.innerHTML = gameData.platform;
+    game.Status.innerHTML = gameData.status;
+    game.category.innerHTML = gameData.genre;
+    game.detiles.innerHTML = gameData.description;
+    game.link.href = gameData.game_url;
 }
 
