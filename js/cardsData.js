@@ -1,4 +1,5 @@
 import showDetiles from "./detiles.js"
+import { displayLoader } from "./ui.js";
 // display By Category
 export async function displayByCategory(Categories,options,conatinerCard){ Categories.forEach((item) => {
     item.addEventListener("click",async (e) => {
@@ -17,6 +18,7 @@ export async function displayByCategory(Categories,options,conatinerCard){ Categ
 // fetch data by category
 export async function getData(url) {
     try {
+      displayLoader(true);
       const options = {
           method: 'GET',
           headers: {
@@ -26,6 +28,7 @@ export async function getData(url) {
       };
         const response = await fetch(url, options);
         const result = await response.json();
+        displayLoader(false);
         return result;
     } catch (error) {
         console.error(error);
