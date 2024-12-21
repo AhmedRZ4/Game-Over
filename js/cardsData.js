@@ -1,45 +1,41 @@
 import showDetiles from "./detiles.js"
 import { displayLoader } from "./ui.js";
 // display By Category
-export async function displayByCategory(Categories,options,conatinerCard){ Categories.forEach((item) => {
+export async function displayByCategory(Categories,conatinerCard,links){ Categories.forEach((item) => {
     item.addEventListener("click",async (e) => {
         // active effect      
         document.querySelector(".nav-item a.active").classList.remove("active");
         const category = e.target.getAttribute('data-Category');
-        const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`;
-        const conatinerCard = document.getElementById("container");
-        addData(await getData(url),conatinerCard);
-        getGameId();
+        let{base,option}=getApi(links);
+        base=`${base}category=${category}`;
+        addData(await getData(base,option),conatinerCard);      
         e.target.classList.add("active");
         return category;
     })
 })
 }
 // fetch data by category
-export async function getData(url) {
+export async function getData(url,options) {
     try {
       displayLoader(true);
-      const options = {
-          method: 'GET',
-          headers: {
-              'x-rapidapi-key': '223b8020afmsh17cb810f82d2033p1674a9jsndc8a3370c63d',
-              'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
-          }
-      };
         const response = await fetch(url, options);
-        const result = await response.json();
-        displayLoader(false);
+        if(response.status>=500 && response.status<599){
+          alert("We are updating our games list. Please try again later... :)")
+          return [];
+        }
+        const result = await response.json(); 
         return result;
     } catch (error) {
         console.error(error);
+    }finally{
+      displayLoader(false);
     }
 }
 // card items
-export function addData(source,displayElement) {
-    let cartoona = ""
-    source.forEach(item => {
-        let len = String(item.short_description).length
-        cartoona += `<div class="col-md-6 col-lg-4 col-xl-3  px-3" data-Id="${item.id}">
+export function addData(source,displayElement) {      
+    const values=source.map((item)=>{
+      let len = String(item.short_description).length
+        return `<div class="col-md-6 col-lg-4 col-xl-3  px-3" data-Id="${item.id}">
           <div class="card px-2 bg-transparent ">
             <figure class="pt-3 px-2 mb-0">
               <img src="${item.thumbnail}" class="card-img-top " alt="${item.title}">
@@ -57,19 +53,25 @@ export function addData(source,displayElement) {
             </div>
           </div>
         </div>   
-        `
-    })
-    displayElement.innerHTML = cartoona;
+        `;  
+    }).join("");
+    displayElement.innerHTML = values;
 }
 // get game id
-export async function getGameId() {
+export async function getGameId(links) {
   const allGame = document.querySelectorAll("[data-Id]")
-  // let id = "";
   allGame.forEach(child => {
       child.addEventListener("click",async (e) => {
-          const id=e.currentTarget.getAttribute("data-Id")
-          const url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`;  
-         showDetiles(await getData(url));
+          const id=e.currentTarget.getAttribute("data-Id");
+          let{base,option}=getApi(links);
+          base=base.replace("games?","game?");
+          base=`${base}id=${id}`;
+         showDetiles(await getData(base,option));
       });
   });
+}
+
+export function getApi(links){
+  const apiValues={base:`${links[1].base.toString()}`,option:links[1].options}
+    return apiValues;
 }

@@ -28,9 +28,6 @@ h1,h2,h3,h4,h5,h6{
     font-family: "Nerko One", cursive,sans-serif; 
     color: white !important;
 }
-.show{
-    display: block !important;
-}
 .h-bg{
     background-image: url("../img/header-bg.png");
     background-color: rgba(255, 255, 255, 0.023);
@@ -42,20 +39,20 @@ h1,h2,h3,h4,h5,h6{
     height: 200px;
    
 }
-nav{
+nav.navbar {
     margin-top: -30px !important;
 }
-.navbar-brand img{
+.navbar .navbar-brand img{
     width: 20%;
 }
-.nav-item a{
+.navbar .nav-item a{
     cursor: pointer;
     transition: color  .5s;
 }
-.nav-item a.active{
+.navbar .nav-item a.active{
     color: rgb(0, 153, 204) !important;
 }
-.nav-item a:hover{
+.navbar .nav-item a:hover{
     color: rgb(0, 153, 204) !important;
 }
 .card{

@@ -1,7 +1,9 @@
 import {displayLoader,displaySection} from "./ui.js"
 // detiles class
 class SectionDetiles {
+    static #count=0;
     constructor() {
+    
         this.exit = document.querySelector("#detiles button");
         this.image = document.querySelector("#detiles img");
         this.title = document.querySelector("#detiles h3 span");
@@ -9,13 +11,16 @@ class SectionDetiles {
         this.Platform = document.querySelector("#detiles #description p:nth-child(2) span");
         this.Status = document.querySelector("#detiles #description p:nth-child(3) span");
         this.detiles = document.querySelector("#detiles #description p:nth-child(4)");
+        SectionDetiles.#count++;
         this.link = document.querySelector("#detiles a");
         this.exit.addEventListener("click", () => {
             displaySection("card", true);
             displaySection("detiles", false);
         });
     }
-
+    static get count(){
+        return SectionDetiles.#count;
+    }
 }
 // show detiles
 export default function showDetiles(source) {
@@ -26,8 +31,9 @@ export default function showDetiles(source) {
     displayLoader(false);
 }
 // add detiles
-function addDetiles(gameData) {
-    const game = new SectionDetiles();
+const game = new SectionDetiles();
+function addDetiles(gameData) {  
+    console.log("Number of object created >"+SectionDetiles.count);
     game.title.innerHTML = gameData.title;
     game.image.src = gameData.thumbnail;
     game.Platform.innerHTML = gameData.platform;
