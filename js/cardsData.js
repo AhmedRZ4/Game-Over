@@ -20,7 +20,7 @@ export async function getData(url,options) {
       displayLoader(true);
         const response = await fetch(url, options);
         if(response.status>=500 && response.status<599){
-          alert("We are updating our games list. Please try again later... :)")
+          alert("We are updating our games list. Please try again later... :)");
           return [];
         }
         const result = await response.json(); 
@@ -72,6 +72,8 @@ export async function getGameId(links) {
 }
 
 export function getApi(links){
-  const apiValues={base:`${links[1].base.toString()}`,option:links[1].options}
+    const apiValues={base:`${links.base.toString()}`,option:links.options};
     return apiValues;
 }
+
+

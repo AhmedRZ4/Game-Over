@@ -33,7 +33,7 @@ export default function showDetiles(source) {
 // add detiles
 const game = new SectionDetiles();
 function addDetiles(gameData) {  
-    console.log("Number of object created >"+SectionDetiles.count);
+    console.log("Number of object created: "+SectionDetiles.count);
     game.title.innerHTML = gameData.title;
     game.image.src = gameData.thumbnail;
     game.Platform.innerHTML = gameData.platform;

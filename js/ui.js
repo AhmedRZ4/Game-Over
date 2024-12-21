@@ -13,8 +13,11 @@ export function displaySection(name, flag) {
 }
 // loader effict
 export function displayLoader(flag) {
-    if (flag) { loaderLayer.classList.replace("d-none", "d-block"); }
+    if (flag) { 
+        document.body.style.overflowY="hidden";
+        loaderLayer.classList.replace("d-none", "d-block"); }
     else {
+        document.body.style.overflowY="auto";
         loaderLayer.classList.replace("d-block", "d-none");
     }
 }
