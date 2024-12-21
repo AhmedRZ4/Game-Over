@@ -25,9 +25,11 @@ const baseUrl = [{
 }]
 //display category by default
 async function display() {
+    displaySection("card",false);
     let { base, option } = getApi(baseUrl);
     base = `${base}category=mmorpg`;
     await addData(await getData(base, option), conatinerCard);
+    displaySection("card",true);
 }
 display(baseUrl);
 // display specific category
