@@ -78,8 +78,7 @@ nav.navbar {
 }
 .card:hover{
     filter: grayscale(0);
-    transform: scale(1.06);
-    
+    transform: scale(1.06);  
 }
 
 figure {
@@ -91,4 +90,18 @@ figure {
         object-fit: fill;
     }
 }
+#pagination{
+    color: black !important;
+    a{
+        color: black !important;
+    }
+}
+#pagination a:hover{
+    /* color: rgb(0, 153, 204) !important; */
+    background-color: rgb(0, 153, 204) !important;
+}
+#pagination a.active{
+    background-color: rgb(0, 153, 204) !important;
+    color: rgb(255, 255, 255) !important;
 
+}

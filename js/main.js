@@ -95,3 +95,4 @@ const observerOptions = {
 observer.observe(conatinerCard, observerOptions);
 //#endregion
 
+
